@@ -1,0 +1,26 @@
+{
+  "C": {
+    "nodes_high_conf": 127978,
+    "density": 0.000161,
+    "reciprocity": 0.138,
+    "rich_club_density_x": 5.4,
+    "rich_club_frac": 0.3,
+    "small_world_S": 141,
+    "avg_path": 4.42
+  },
+  "early": 0.0,
+  "exact": {
+    "variant": "exact-wiring",
+    "early_loss_300": 0.00175,
+    "converged_loss": 4e-05,
+    "steps": 1999
+  },
+  "null": {
+    "variant": "null-rewired",
+    "early_loss_300": 0.00175,
+    "converged_loss": 4e-05,
+    "steps": 1999
+  },
+  "finding": "exact wins",
+  "notes": "early-regime diff at step 300; convergence compared at best-val. Small n=96 on CPU; proves harness, not final science."
+}

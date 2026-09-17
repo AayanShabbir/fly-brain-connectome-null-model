@@ -1,0 +1,12 @@
+# venv (never commit)
+.venv/
+__pycache__/
+*.pyc
+
+# logs / internal artifacts
+*.log
+_brief.txt
+_archive/
+
+# OS
+.DS_Store

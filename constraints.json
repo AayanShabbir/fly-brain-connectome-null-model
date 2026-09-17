@@ -1,0 +1,91 @@
+{
+  "connectome": {
+    "node_count": {
+      "value": 139255,
+      "high_confidence": 127978,
+      "unit": "neurons",
+      "note": "139,255 expert-proofread neurons in the whole-brain FlyWire connectome; 127,978 form the high-confidence graph at >=5 synapse threshold (graph used for all stats below).",
+      "source": "doi:10.1038/s41586-024-07968-y"
+    },
+    "density": {
+      "value": 0.000161,
+      "unit": "connection probability (~0.016%)",
+      "note": "Overall directed connection probability. Derived from rich-club internal probability 0.000870 / 5.4x; independent adjacency check (2,613,129 edges / 127,978^2) gives 0.0001595 (~0.016%).",
+      "source": "doi:10.1038/s41586-024-07968-y"
+    },
+    "weighted_synapses": {
+      "value_directed": 15100000,
+      "value_raw_chemical": 54500000,
+      "value_threshold_ge5": 32000000,
+      "unit": "synapses",
+      "note": "15.1M directed weighted edges in the stats graph; ~54.5M raw chemical synapses in the full connectome; ~32M survive the >=5 threshold.",
+      "source": "doi:10.1038/s41586-024-07968-y"
+    },
+    "rich_club_pct": {
+      "value": 30,
+      "unit": "% of connectome (40,218 neurons, cut-off total degree k>37)",
+      "note": "Rich-club regime vs degree-preserving (CFG) null: cut-off total degree 37, containing 40,218 neurons (~30%). Against 127,978 graph = 31.4%; vs full 139,255 = 28.9%; Lin et al. report ~30%.",
+      "source": "doi:10.1038/s41586-024-07968-y"
+    },
+    "rich_club_density_mult": {
+      "value": 5.4,
+      "unit": "x overall connection probability",
+      "note": "Rich-club internal connection probability 0.000870 = 5.4x the overall 0.000161.",
+      "source": "doi:10.1038/s41586-024-07968-y"
+    },
+    "reciprocity": {
+      "value": 0.138,
+      "unit": "connection reciprocity probability",
+      "note": "77,607 of 127,978 neurons (~2 in 3) participate in >=1 reciprocal connection; avg 23% incoming / 18% outgoing connections reciprocal. Reciprocity higher than ER and CFG nulls.",
+      "source": "doi:10.1038/s41586-024-07968-y"
+    },
+    "small_world_S": {
+      "value": 141,
+      "unit": "S^Delta small-worldness coefficient",
+      "note": "Driven by clustering C^Delta 0.0463 vs ER null 0.0003 (~154x) with little avg-path penalty (undirected 3.91 vs ER 3.57). C. elegans = 3.21; internet = 98.1.",
+      "source": "doi:10.1038/s41586-024-07968-y"
+    },
+    "avg_directed_path": {
+      "value": 4.42,
+      "unit": "hops (max 13) within giant SCC",
+      "note": "Avg shortest directed path in giant SCC = 4.42 hops, every neuron reachable within 13; undirected (WCC) avg 3.91, max 11.",
+      "source": "doi:10.1038/s41586-024-07968-y"
+    },
+    "scc_pct": {
+      "value": 93.3,
+      "unit": "% of neurons in single strongly-connected component",
+      "note": "93.3% of neurons in one SCC, 98.8% in one WCC. Robust to pruning strongest/weakest edges and synapse threshold.",
+      "source": "doi:10.1038/s41586-024-07968-y"
+    },
+    "robustness_note": {
+      "value": "Distributed fault tolerance; survives ~60% neuron removal; NO dominant command-hub neurons (unlike C. elegans AVA/AVB). Removing neurons by largest total degree, first SCC persists until total degree 50 (then splits into left/right hemispheres surviving ~60% removal); removing smallest-degree neurons never divides the SCC.",
+      "source": "doi:10.1038/s41586-024-07968-y"
+    }
+  },
+  "null_model": {
+    "gate_status": "contested",
+    "finding": "CONTESTED. Exact connectome wiring does NOT reliably beat a well-constructed degree-preserving null on EARLY-LEARNING-EFFICIENCY metrics (Dhiman 2026: advantage vanishes under fair shared init + degree-preserving rewiring, loss diff -0.0020 vanished to +0.0003), but DOES beat it on FINAL-TASK CONTROL PERFORMANCE (FlyGM: 8.29 vs 13.55 deg angle error) and on input-routing / dominant-mode identity (Therianos; Creamer/Leifer/Pillow C. elegans activity prediction). GATE RULE: generators MUST NOT over-claim a connectome 'learning advantage'. Degree-preserving nulls + shared-initialization controls are the mandatory baseline; naive sparse-random controls are not acceptable. Any learning-advantage claim must cite which regime (early-learning vs convergence) and must be weight-matched where applicable (both headline nulls have caveats: Dhiman's is not cell-type/motif-aware; FlyGM's is unweighted).",
+    "source": "arxiv:2604.04033; arxiv:2602.17997; arxiv:2606.17745; doi:10.1101/2024.09.22.614271; pith.science/paper/2604.04033"
+  },
+  "sources": {
+    "lin_nature_2024": "doi:10.1038/s41586-024-07968-y",
+    "dorkenwald_nature_2024": "doi:10.1038/s41586-024-07558-y",
+    "schlegel_nature_2024": "doi:10.1038/s41586-024-07686-5",
+    "dhiman_2026": "arxiv:2604.04033",
+    "flygm_2026": "arxiv:2602.17997",
+    "therianos_2026": "arxiv:2606.17745",
+    "creamler_pillow_celegans": "doi:10.1101/2024.09.22.614271",
+    "lappalainen_flyvis_2024": "doi:10.1038/s41586-024-07939-3",
+    "beiran_litwinkumar_2025": "doi:10.1038/s41593-025-02080-4",
+    "pith_review_dhiman": "https://pith.science/paper/2604.04033",
+    "flywire_zenodo": "doi:10.5281/zenodo.10676866"
+  },
+  "metadata": {
+    "version": "2.0",
+    "updated": "2026-09-15",
+    "author": "Aayan Shabbir",
+    "corpus": "fly-brain-connectome/",
+    "topology_base": "Lin et al. Nature 2024 brain connectome (NOT the June 2026 full-CNS ~166k extension; global metrics differ for that graph)",
+    "null_model_authority": "null-model-research/null-model-brief.md (2026-09-14, most recent/most authoritative)"
+  }
+}
